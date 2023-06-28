@@ -9,5 +9,5 @@ public class BaseEvent : Message
         Type = type;
     }
     public int Version { get; set; }
-    public required string Type { get; set; }
+    public string Type { get; set; }
 }
