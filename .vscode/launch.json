@@ -21,7 +21,8 @@
             },
             "env": {
                 "ASPNETCORE_ENVIRONMENT": "Development",
-                "ASPNETCORE_URLS": "http://localhost:5010"
+                "ASPNETCORE_URLS": "http://localhost:5010",
+                "KAFKA_TOPIC": "SocualMediaPostEvents"
             },
             "sourceFileMap": {
                 "/Views": "${workspaceFolder}/Views"
@@ -35,6 +36,7 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
+            "requireExactSource": false,
             // If you have changed target frameworks, make sure to update the program path.
             "program": "${workspaceFolder}/SM-Post/Post.Query/Post.Query.Api/bin/Debug/net7.0/Post.Query.Api.dll",
             "args": [],
@@ -47,7 +49,8 @@
             },
             "env": {
                 "ASPNETCORE_ENVIRONMENT": "Development",
-                "ASPNETCORE_URLS": "http://localhost:5011"
+                "ASPNETCORE_URLS": "http://localhost:5011",
+                "KAFKA_TOPIC": "SocualMediaPostEvents"
             },
             "sourceFileMap": {
                 "/Views": "${workspaceFolder}/Views"
