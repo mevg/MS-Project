@@ -23,7 +23,7 @@ public class EventSourcingHandler : IEventSourcingHandler<PostAggregate>
             return aggregate;
         }
         aggregate.ReplayEvents(events);
-        var lastVersion = events.Select(e => e.Version).Max();
+        aggregate.Version = events.Select(e => e.Version).Max();
         return aggregate;
     }
 
