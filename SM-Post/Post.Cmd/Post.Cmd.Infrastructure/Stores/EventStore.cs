@@ -32,7 +32,7 @@ public class EventStore : IEventStore
     public async Task SaveEventAsync(Guid aggregateId, IEnumerable<BaseEvent> events, int expectedVersion)
     {
         var eventStream = await _eventStoreRepository.FindByAggregateId(aggregateId);
-        if(expectedVersion != 1 && eventStream[^1].Version != expectedVersion){
+        if(expectedVersion != -1 && eventStream[^1].Version != expectedVersion){
             throw new ConcurrencyException();
         }
         var version = expectedVersion;
