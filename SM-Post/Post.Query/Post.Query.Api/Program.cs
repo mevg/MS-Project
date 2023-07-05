@@ -20,6 +20,8 @@ var builder = WebApplication.CreateBuilder(args);
     builder.Services.AddScoped<IEventConsumer, EventConsumer>();
 
     builder.Services.AddControllers();
+
+    builder.Services.AddHostedService<ConsumerHostedService>();
     //create database and tables from code
     var dataContext = builder.Services.BuildServiceProvider().GetRequiredService<DatabaseContext>();
     dataContext.Database.EnsureCreated();
